@@ -1,14 +1,16 @@
 .pole {
-  border: 1px solid black;
-  height: 10px;
-  width: 10px;
+  border: 3px solid black;
+  height: 30px;
+  width: 30px;
   display: inline-block;
 }
 
 .had {
-  background: lime;
+  background: rgb(52, 7, 112);
 }
 
 body {
   overflow: hidden;
 }
+
+.jablko {background: rgb(182, 27, 27)}

@@ -1,16 +1,31 @@
-function pohniHadem(dolu, doprava) {
-  const had = document.querySelector(".had");
-  console.log("Had je na " + had.id);
+let had = [document.querySelector(".had")]
 
-  let radek = parseInt(had.id.split(":")[0]);
-  let sloupec = parseInt(had.id.split(":")[1]);
+
+function pohniHadem(dolu, doprava) {
+  const hadiHlava = had[0]
+  console.log("Had je na " + hadiHlava.id);
+
+  let radek = parseInt(hadiHlava.id.split(":")[0]);
+  let sloupec = parseInt(hadiHlava.id.split(":")[1]);
   const idCil = radek + dolu + ":" + (sloupec + doprava);
   console.log("Had bude na " + idCil);
 
-  const cil = document.getElementById(idCil);
-  cil.classList.add("had");
-  had.classList.remove("had");
-}
+  const cilovePolicko = document.getElementById(idCil);0
+  
+  had.unshift(cilovePolicko);
+  
+  cilovePolicko.classList.add("had");
+  
+ 
+
+
+ if  (cilovePolicko.classList.contains("jablko")) {
+  console.log("Had bude jíst"); 
+  cilovePolicko.classlist.remove("jablko");
+} else {
+  const polickoKterePrestavaBytHadem = had.pop();
+  polickoKterePrestavaBytHadem.classList.remove("had");
+  }
 
 function pohyb(udalost) {
   if (udalost.which === 37) {
@@ -31,4 +46,4 @@ function pohyb(udalost) {
   }
 }
 
-document.addEventListener("keydown", pohyb);
+document.addEventListener('keydown', pohyb) }
